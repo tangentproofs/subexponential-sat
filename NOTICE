@@ -1,0 +1,13 @@
+subexponential-sat: an informalization site for two Lean 4 formalizations of subexponential-time k-SAT.
+
+Vendored, unchanged, under the Apache License 2.0:
+
+* vendor/anthropic-eth/ — the `eth` project of https://github.com/anthropics/formal-math
+  at commit 16a5ce41304fcdaea4e0be7c132e1c361dc26da5 (Lean sources, paper.pdf, README, NOTICE, LICENSE,
+  lakefile, manifest, toolchain). Copyright 2026 Anthropic, PBC. See vendor/anthropic-eth/NOTICE.
+* vendor/openai-sat/ — five files of https://github.com/openai/math (lean/ directory) at commit
+  7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a: ComparatorChallenges/SubexponentialSAT.{lean,json},
+  OAI/Algorithms/SubexponentialSAT/{Main.lean, SqrtLogSpace/Final.lean, SubexpOrderedRawMainTheorem.lean},
+  docs/378.md, lean-toolchain. Authors: OpenAI. See vendor/openai-sat/LICENSE.
+
+The explanations in site/ are a separate work (Apache-2.0) and are not endorsed by Anthropic or OpenAI.

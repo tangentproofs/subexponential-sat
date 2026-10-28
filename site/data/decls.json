@@ -1,0 +1,1830 @@
+[
+ {
+  "id": "Anthropic.AllOccur",
+  "name": "MainResults.AllOccur",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 127,
+  "endLine": 127,
+  "statement": "def AllOccur {n : ℕ} (φ : CNF n) : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.MainTheorem"
+  ],
+  "depth": 2,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.CNF",
+  "name": "MainResults.CNF",
+  "kind": "abbrev",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 62,
+  "endLine": 62,
+  "statement": "abbrev CNF (n : ℕ) : Type",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List"
+  ],
+  "meaningDeps": [
+   "Anthropic.Lit"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.AllOccur",
+   "Anthropic.CountsWithin",
+   "Anthropic.DecidesKSat",
+   "Anthropic.IsKCNF",
+   "Anthropic.MainTheorem",
+   "Anthropic.Satisfiable",
+   "Anthropic.encClauses",
+   "Anthropic.encInput",
+   "Anthropic.numSat"
+  ],
+  "depth": 2,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.CountsWithin",
+  "name": "MainResults.CountsWithin",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 158,
+  "endLine": 160,
+  "statement": "def CountsWithin (M : TM2ComputableAux Bool Bool) (k : ℕ) {n : ℕ} (φ : CNF n) (t : ℕ) : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Turing.TM2ComputableAux",
+   "Bool",
+   "Nonempty",
+   "Turing.TM2OutputsInTime"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF",
+   "Anthropic.encInput",
+   "Anthropic.binary",
+   "Anthropic.numSat"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.MainTheorem"
+  ],
+  "depth": 2,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.DecidesKSat",
+  "name": "MainResults.DecidesKSat",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 92,
+  "endLine": 95,
+  "statement": "def DecidesKSat (k : ℕ) (M : TM2ComputableAux Bool Bool) (t : ℕ → ℕ) : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Turing.TM2ComputableAux",
+   "Bool",
+   "Nonempty",
+   "Turing.TM2OutputsInTime"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF",
+   "Anthropic.IsKCNF",
+   "Anthropic.Satisfiable",
+   "Anthropic.encClauses"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.InTime"
+  ],
+  "depth": 5,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.ETH",
+  "name": "MainResults.ETH",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 117,
+  "endLine": 117,
+  "statement": "def ETH : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "Anthropic.s"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.ETHIsFalse"
+  ],
+  "depth": 2,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.ETHIsFalse",
+  "name": "MainResults.ETHIsFalse",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 122,
+  "endLine": 122,
+  "statement": "def ETHIsFalse : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "Anthropic.ETH"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.ethIsFalse"
+  ],
+  "depth": 1,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.InTime",
+  "name": "MainResults.InTime",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 100,
+  "endLine": 102,
+  "statement": "def InTime (k : ℕ) (δ : ℝ≥0) : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Turing.TM2ComputableAux",
+   "Bool",
+   "Finite"
+  ],
+  "meaningDeps": [
+   "Anthropic.DecidesKSat"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.s"
+  ],
+  "depth": 4,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.IsKCNF",
+  "name": "MainResults.IsKCNF",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 69,
+  "endLine": 69,
+  "statement": "def IsKCNF (k : ℕ) {n : ℕ} (φ : CNF n) : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "Anthropic.CNF"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.DecidesKSat",
+   "Anthropic.MainTheorem"
+  ],
+  "depth": 2,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.Lit",
+  "name": "MainResults.Lit",
+  "kind": "abbrev",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 59,
+  "endLine": 59,
+  "statement": "abbrev Lit (n : ℕ) : Type",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Bool"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.CNF",
+   "Anthropic.slot"
+  ],
+  "depth": 3,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.MainTheorem",
+  "name": "MainResults.MainTheorem",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 177,
+  "endLine": 180,
+  "statement": "def MainTheorem : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Turing.TM2ComputableAux",
+   "Bool",
+   "Finite"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF",
+   "Anthropic.IsKCNF",
+   "Anthropic.AllOccur",
+   "Anthropic.CountsWithin",
+   "Anthropic.timeMin"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.mainTheorem"
+  ],
+  "depth": 1,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.Satisfiable",
+  "name": "MainResults.Satisfiable",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 80,
+  "endLine": 80,
+  "statement": "def Satisfiable {n : ℕ} (φ : CNF n) : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Bool"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.DecidesKSat"
+  ],
+  "depth": 6,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.binary",
+  "name": "MainResults.binary",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 135,
+  "endLine": 135,
+  "statement": "def binary (n c : ℕ) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool",
+   "List.range"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.CountsWithin"
+  ],
+  "depth": 3,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.encClauses",
+  "name": "MainResults.encClauses",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 85,
+  "endLine": 87,
+  "statement": "def encClauses (k : ℕ) {n : ℕ} (φ : CNF n) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool",
+   "List.replicate",
+   "List.range",
+   "Nat.log2"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF",
+   "Anthropic.slot"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.DecidesKSat",
+   "Anthropic.encInput"
+  ],
+  "depth": 4,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.encInput",
+  "name": "MainResults.encInput",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 138,
+  "endLine": 139,
+  "statement": "def encInput (k : ℕ) {n : ℕ} (φ : CNF n) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool",
+   "List.replicate"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF",
+   "Anthropic.encClauses"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.CountsWithin"
+  ],
+  "depth": 3,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.ethIsFalse",
+  "name": "MainResults.ethIsFalse",
+  "kind": "theorem",
+  "file": "vendor/anthropic-eth/Solution.lean",
+  "module": "Solution",
+  "line": 40,
+  "endLine": 40,
+  "statement": "theorem MainResults.ethIsFalse : MainResults.ETHIsFalse",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "Anthropic.ETHIsFalse"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": 0,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.expM",
+  "name": "MainResults.expM",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 147,
+  "endLine": 147,
+  "statement": "noncomputable def expM (k m : ℕ) : ℝ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Real.sqrt"
+  ],
+  "meaningDeps": [
+   "Anthropic.lg"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.timeMin"
+  ],
+  "depth": 3,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.expN",
+  "name": "MainResults.expN",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 150,
+  "endLine": 150,
+  "statement": "noncomputable def expN (k n : ℕ) : ℝ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Real.sqrt"
+  ],
+  "meaningDeps": [
+   "Anthropic.lg"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.timeMin"
+  ],
+  "depth": 3,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.lg",
+  "name": "MainResults.lg",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 144,
+  "endLine": 144,
+  "statement": "noncomputable def lg (x : ℝ) : ℝ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Real.logb"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.expM",
+   "Anthropic.expN"
+  ],
+  "depth": 4,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.mainTheorem",
+  "name": "MainResults.mainTheorem",
+  "kind": "theorem",
+  "file": "vendor/anthropic-eth/Solution.lean",
+  "module": "Solution",
+  "line": 44,
+  "endLine": 44,
+  "statement": "theorem MainResults.mainTheorem : MainResults.MainTheorem",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "Anthropic.MainTheorem"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": 0,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.numSat",
+  "name": "MainResults.numSat",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 130,
+  "endLine": 131,
+  "statement": "def numSat {n : ℕ} (φ : CNF n) : ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Bool"
+  ],
+  "meaningDeps": [
+   "Anthropic.CNF"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.CountsWithin"
+  ],
+  "depth": 3,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.s",
+  "name": "MainResults.s",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 107,
+  "endLine": 107,
+  "statement": "noncomputable def s (k : ℕ) : ℝ≥0∞",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "Anthropic.InTime"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.ETH"
+  ],
+  "depth": 3,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.slot",
+  "name": "MainResults.slot",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 73,
+  "endLine": 75,
+  "statement": "def slot {n : ℕ} : Option (Lit n) → ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Option"
+  ],
+  "meaningDeps": [
+   "Anthropic.Lit"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.encClauses"
+  ],
+  "depth": 5,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "Anthropic.timeMin",
+  "name": "MainResults.timeMin",
+  "kind": "def",
+  "file": "vendor/anthropic-eth/MainResults.lean",
+  "module": "MainResults",
+  "line": 153,
+  "endLine": 154,
+  "statement": "noncomputable def timeMin (C k m n : ℕ) : ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "Anthropic.expM",
+   "Anthropic.expN"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "Anthropic.MainTheorem"
+  ],
+  "depth": 2,
+  "project": "anthropic",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.BinaryArithmetic.bitVal",
+  "name": "OAI.Algorithms.SubexponentialSAT.BinaryArithmetic.bitVal",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 5,
+  "endLine": 5,
+  "statement": "def bitVal (b : Bool) : ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.BinaryArithmetic.toNat"
+  ],
+  "depth": 2,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.BinaryArithmetic.toNat",
+  "name": "OAI.Algorithms.SubexponentialSAT.BinaryArithmetic.toNat",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 7,
+  "endLine": 9,
+  "statement": "def toNat : List Bool → ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool"
+  ],
+  "meaningDeps": [
+   "OpenAI.BinaryArithmetic.bitVal"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Computation.PrimitiveMachine",
+  "name": "OAI.Algorithms.SubexponentialSAT.Computation.PrimitiveMachine",
+  "kind": "structure",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 92,
+  "endLine": 99,
+  "statement": "structure PrimitiveMachine where\n  tapeCount : ℕ\n  stateCount : ℕ\n  inputTape : Fin tapeCount\n  start : Fin stateCount\n  scan : Fin stateCount → Fin tapeCount\n  transition : Fin stateCount → Option Bool →\n    Bool ⊕ (Fin stateCount × Turing.TM0.Stmt (Option Bool))",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Option",
+   "Bool",
+   "Turing.TM0.Stmt"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Computation.PrimitiveMachine.Cfg",
+   "OpenAI.Computation.PrimitiveMachine.init",
+   "OpenAI.Computation.PrimitiveMachine.step",
+   "OpenAI.SqrtLogSpace.LocatedCfg",
+   "OpenAI.SqrtLogSpace.LocatedCfg.monitor",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.locatedInit",
+   "OpenAI.SqrtLogSpace.locatedStep",
+   "OpenAI.SqrtLogSpace.visitedSpace",
+   "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem_explicit"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Computation.PrimitiveMachine.Cfg",
+  "name": "OAI.Algorithms.SubexponentialSAT.Computation.PrimitiveMachine.Cfg",
+  "kind": "structure",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 103,
+  "endLine": 105,
+  "statement": "structure Cfg (machine : PrimitiveMachine) where\n  state : Bool ⊕ Fin machine.stateCount\n  tapes : Fin machine.tapeCount → Turing.Tape (Option Bool)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool",
+   "Fin",
+   "Turing.Tape",
+   "Option"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Computation.PrimitiveMachine.init",
+  "name": "OAI.Algorithms.SubexponentialSAT.Computation.PrimitiveMachine.init",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 121,
+  "endLine": 124,
+  "statement": "def init (machine : PrimitiveMachine) (input : List Bool) : machine.Cfg",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool",
+   "Turing.Tape.mk₁"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Computation.PrimitiveMachine.step",
+  "name": "OAI.Algorithms.SubexponentialSAT.Computation.PrimitiveMachine.step",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 107,
+  "endLine": 119,
+  "statement": "def step (machine : PrimitiveMachine) (c : machine.Cfg) : Option machine.Cfg",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Option",
+   "Function.update"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Computation.Trace"
+  ],
+  "depth": 2,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Computation.Trace",
+  "name": "OAI.Algorithms.SubexponentialSAT.Computation.Trace",
+  "kind": "inductive",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 87,
+  "endLine": 90,
+  "statement": "inductive Trace {α : Type u} (step : α → Option α) : ℕ → α → α → Prop\n  | refl (a : α) : Trace step 0 a a\n  | cons {n : ℕ} {a b c : α} :\n      step a = some b → Trace step n b c → Trace step (n + 1) a c",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Option"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine.step"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.clauseNumbers",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.clauseNumbers",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 67,
+  "endLine": 68,
+  "statement": "def clauseNumbers {n : ℕ} (C : SAT.Clause (Fin n)) : List ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "List"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.Clause",
+   "OpenAI.Encoding.literalCode"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.cnfNumbers"
+  ],
+  "depth": 4,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.cnfNumbers",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.cnfNumbers",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 70,
+  "endLine": 71,
+  "statement": "def cnfNumbers {n : ℕ} (F : SAT.CNF (Fin n)) : List (List ℕ)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "List"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.Encoding.clauseNumbers"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.encodeCNFBody"
+  ],
+  "depth": 3,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.encodeCNF",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.encodeCNF",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 76,
+  "endLine": 77,
+  "statement": "def encodeCNF {n : ℕ} (F : SAT.CNF (Fin n)) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "List",
+   "Bool"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.Encoding.encodeNat",
+   "OpenAI.Encoding.encodeCNFBody"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.formulaBitLength",
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.encodeCNFBody",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.encodeCNFBody",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 73,
+  "endLine": 74,
+  "statement": "def encodeCNFBody {n : ℕ} (F : SAT.CNF (Fin n)) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "List",
+   "Bool"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.Encoding.encodeList",
+   "OpenAI.Encoding.encodeNat",
+   "OpenAI.Encoding.cnfNumbers"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.encodeCNF"
+  ],
+  "depth": 2,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.encodeList",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.encodeList",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 60,
+  "endLine": 62,
+  "statement": "def encodeList {α : Type*} (enc : α → List Bool) : List α → List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool"
+  ],
+  "meaningDeps": [
+   "OpenAI.Encoding.frame"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.encodeCNFBody"
+  ],
+  "depth": 3,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.encodeNat",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.encodeNat",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 55,
+  "endLine": 55,
+  "statement": "def encodeNat (n : ℕ) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool",
+   "List.replicate"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.encodeCNF",
+   "OpenAI.Encoding.encodeCNFBody"
+  ],
+  "depth": 2,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.formulaBitLength",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.formulaBitLength",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 79,
+  "endLine": 79,
+  "statement": "def formulaBitLength {n : ℕ} (F : SAT.CNF (Fin n)) : ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.Encoding.encodeCNF"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.frame",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.frame",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 57,
+  "endLine": 58,
+  "statement": "def frame (bits : List Bool) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.encodeList"
+  ],
+  "depth": 4,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.Encoding.literalCode",
+  "name": "OAI.Algorithms.SubexponentialSAT.Encoding.literalCode",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 64,
+  "endLine": 65,
+  "statement": "def literalCode {n : ℕ} (l : SAT.Literal (Fin n)) : ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.Literal"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.clauseNumbers"
+  ],
+  "depth": 5,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.Assignment",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.Assignment",
+  "kind": "abbrev",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 17,
+  "endLine": 17,
+  "statement": "abbrev Assignment (V : Type u)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SAT.CNF.eval",
+   "OpenAI.SAT.Clause.eval",
+   "OpenAI.SAT.Literal.eval",
+   "OpenAI.SAT.satisfyingAssignments"
+  ],
+  "depth": 3,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.CNF",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.CNF",
+  "kind": "abbrev",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 25,
+  "endLine": 25,
+  "statement": "abbrev CNF (V : Type u)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Finset"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.Clause"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.cnfNumbers",
+   "OpenAI.Encoding.encodeCNF",
+   "OpenAI.Encoding.encodeCNFBody",
+   "OpenAI.Encoding.formulaBitLength",
+   "OpenAI.SAT.CNF.eval",
+   "OpenAI.SAT.WidthAtMost",
+   "OpenAI.SAT.count",
+   "OpenAI.SAT.satisfyingAssignments",
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.CNF.eval",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.CNF.eval",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 35,
+  "endLine": 36,
+  "statement": "def CNF.eval (a : Assignment V) (F : CNF V) : Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool",
+   "decide"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.Assignment",
+   "OpenAI.SAT.CNF"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.Clause",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.Clause",
+  "kind": "abbrev",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 24,
+  "endLine": 24,
+  "statement": "abbrev Clause (V : Type u)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Finset"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.Literal"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.clauseNumbers",
+   "OpenAI.SAT.CNF",
+   "OpenAI.SAT.Clause.eval"
+  ],
+  "depth": 2,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.Clause.eval",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.Clause.eval",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 32,
+  "endLine": 33,
+  "statement": "def Clause.eval (a : Assignment V) (C : Clause V) : Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool",
+   "decide"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.Assignment",
+   "OpenAI.SAT.Clause"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.Literal",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.Literal",
+  "kind": "structure",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 19,
+  "endLine": 22,
+  "statement": "structure Literal (V : Type u) where\n  «variable» : V\n  positive : Bool\n  deriving DecidableEq",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool",
+   "DecidableEq"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.Encoding.literalCode",
+   "OpenAI.SAT.Clause",
+   "OpenAI.SAT.Literal.eval"
+  ],
+  "depth": 3,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.Literal.eval",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.Literal.eval",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 29,
+  "endLine": 30,
+  "statement": "def Literal.eval (a : Assignment V) (l : Literal V) : Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.Assignment",
+   "OpenAI.SAT.Literal"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.WidthAtMost",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.WidthAtMost",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 38,
+  "endLine": 38,
+  "statement": "def WidthAtMost (k : ℕ) (F : CNF V) : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.count",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.count",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 47,
+  "endLine": 47,
+  "statement": "def count (F : CNF V) : ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.SAT.satisfyingAssignments"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SAT.satisfyingAssignments",
+  "name": "OAI.Algorithms.SubexponentialSAT.SAT.satisfyingAssignments",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 44,
+  "endLine": 45,
+  "statement": "def satisfyingAssignments (F : CNF V) : Finset (Assignment V)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Finset"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.SAT.Assignment"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SAT.count"
+  ],
+  "depth": 2,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLog.Statement.runtimeBound",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 136,
+  "endLine": 139,
+  "statement": "noncomputable def runtimeBound (constant exponentConstant : ℝ)\n    (degree inputBits numVars : ℕ) : ℝ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "OpenAI.SqrtLog.Statement.runtimeScale"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space",
+   "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem_explicit"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLog.Statement.runtimeScale",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeScale",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 132,
+  "endLine": 134,
+  "statement": "noncomputable def runtimeScale (n : ℕ) : ℝ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Real.log",
+   "Real.sqrt"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLog.Statement.runtimeBound"
+  ],
+  "depth": 2,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.LocatedCfg",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.LocatedCfg",
+  "kind": "structure",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 149,
+  "endLine": 153,
+  "statement": "structure LocatedCfg (machine : PrimitiveMachine) where\n  config : machine.Cfg\n  position : Fin machine.tapeCount → ℤ\n  lower : Fin machine.tapeCount → ℤ\n  upper : Fin machine.tapeCount → ℤ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.LocatedCfg.monitor",
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.locatedInit",
+   "OpenAI.SqrtLogSpace.locatedStep",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space",
+   "OpenAI.SqrtLogSpace.visitedSpace"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.LocatedCfg.monitor",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.LocatedCfg.monitor",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 166,
+  "endLine": 182,
+  "statement": "def LocatedCfg.monitor {machine : PrimitiveMachine} (c : LocatedCfg machine)\n    (config : machine.Cfg) : LocatedCfg machine",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Sum.elim",
+   "Function.update"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine",
+   "OpenAI.SqrtLogSpace.LocatedCfg",
+   "OpenAI.SqrtLogSpace.headDisplacement"
+  ],
+  "proofDeps": [],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.compiled_exact_count_and_sat",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean",
+  "module": "Final",
+  "line": 10,
+  "endLine": 69,
+  "statement": "theorem compiled_exact_count_and_sat (k : ℕ) (hk : 2 ≤ k) :\n    ∃ (labels : ℕ) (program : BitProgram.Program 80 1220 labels)\n      (C A S : ℝ) (d e : ℕ),\n      program.outputStack = 1216 ∧\n      0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧\n      ∀ (n : ℕ) (F : SAT.CNF (Fin n)), SAT.WidthAtMost k F →\n        ∃ (time : ℕ) (final : LocatedCfg (GuardedCompiler.primitive program)),\n          Computation.Trace (locatedStep (GuardedCompiler.primitive program)) time\n            (locatedInit (GuardedCompiler.primitive program) (Encoding.encodeCNF F)) final ∧\n          final.config.tapes (256 : Fin 1220) =\n            Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧\n          final.config.tapes (1216 : Fin 1220) =\n            Turing.Tape.mk₁ [some (decide (0 < SAT.count F))] ∧\n          final.config.state = Sum.inl (decide (0 < SAT.count F)) ∧\n          BinaryArithmetic.toNat (countWord (SAT.count F)) = SAT.count F ∧\n          (countWord (SAT.count F)).length ≤ n + 1 ∧\n          (time : ℝ) ≤ OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound C A d\n            (Encoding.formulaBitLength F) n ∧\n          ∀ (prefixSteps : ℕ)\n            (intermediate : LocatedCfg (GuardedCompiler.primitive program)), prefixSteps ≤ time →\n            Computation.Trace (locatedStep (GuardedCompiler.primitive program)) prefixSteps\n              (locatedInit (GuardedCompiler.primitive program) (Encoding.encodeCNF F))\n              intermediate →\n            (visitedSpace intermediate : ℝ) ≤\n              S * ((Encoding.formulaBitLength F : ℝ) + 1) ^ e",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Turing.Tape.mk₁",
+   "decide",
+   "Sum.inl"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.SAT.WidthAtMost",
+   "OpenAI.SqrtLogSpace.LocatedCfg",
+   "OpenAI.Computation.Trace",
+   "OpenAI.SqrtLogSpace.locatedStep",
+   "OpenAI.SqrtLogSpace.locatedInit",
+   "OpenAI.Encoding.encodeCNF",
+   "OpenAI.SqrtLogSpace.countWord",
+   "OpenAI.SAT.count",
+   "OpenAI.BinaryArithmetic.toNat",
+   "OpenAI.SqrtLog.Statement.runtimeBound",
+   "OpenAI.Encoding.formulaBitLength",
+   "OpenAI.SqrtLogSpace.visitedSpace"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.countWord",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.countWord",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 147,
+  "endLine": 147,
+  "statement": "def countWord (a : ℕ) : List Bool",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.exact_count_and_sat",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.exact_count_and_sat",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean",
+  "module": "Final",
+  "line": 74,
+  "endLine": 102,
+  "statement": "theorem exact_count_and_sat (k : ℕ) (hk : 2 ≤ k) :\n    ∃ (machine : Computation.PrimitiveMachine)\n      (countTape answerTape : Fin machine.tapeCount)\n      (C A S : ℝ) (d e : ℕ),\n      0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧\n      ∀ (n : ℕ) (F : SAT.CNF (Fin n)), SAT.WidthAtMost k F →\n        ∃ (time : ℕ) (final : LocatedCfg machine),\n          Computation.Trace (locatedStep machine) time\n            (locatedInit machine (Encoding.encodeCNF F)) final ∧\n          final.config.tapes countTape =\n            Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧\n          final.config.tapes answerTape =\n            Turing.Tape.mk₁ [some (decide (0 < SAT.count F))] ∧\n          final.config.state = Sum.inl (decide (0 < SAT.count F)) ∧\n          BinaryArithmetic.toNat (countWord (SAT.count F)) = SAT.count F ∧\n          (countWord (SAT.count F)).length ≤ n + 1 ∧\n          (time : ℝ) ≤ OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound C A d\n            (Encoding.formulaBitLength F) n ∧\n          ∀ (prefixSteps : ℕ) (intermediate : LocatedCfg machine),\n            prefixSteps ≤ time →\n            Computation.Trace (locatedStep machine) prefixSteps\n              (locatedInit machine (Encoding.encodeCNF F)) intermediate →\n            (visitedSpace intermediate : ℝ) ≤\n              S * ((Encoding.formulaBitLength F : ℝ) + 1) ^ e",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Turing.Tape.mk₁",
+   "decide",
+   "Sum.inl"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine",
+   "OpenAI.SAT.CNF",
+   "OpenAI.SAT.WidthAtMost",
+   "OpenAI.SqrtLogSpace.LocatedCfg",
+   "OpenAI.Computation.Trace",
+   "OpenAI.SqrtLogSpace.locatedStep",
+   "OpenAI.SqrtLogSpace.locatedInit",
+   "OpenAI.Encoding.encodeCNF",
+   "OpenAI.SqrtLogSpace.countWord",
+   "OpenAI.SAT.count",
+   "OpenAI.BinaryArithmetic.toNat",
+   "OpenAI.SqrtLog.Statement.runtimeBound",
+   "OpenAI.Encoding.formulaBitLength",
+   "OpenAI.SqrtLogSpace.visitedSpace"
+  ],
+  "proofDeps": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat"
+  ],
+  "usedBy": [],
+  "depth": 0,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.exact_count_eth",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.exact_count_eth",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean",
+  "module": "Final",
+  "line": 104,
+  "endLine": 147,
+  "statement": "theorem exact_count_eth (k : ℕ) (hk : 2 ≤ k) :\n    ∃ (labels : ℕ) (program : BitProgram.Program 80 1220 labels)\n      (C A S : ℝ) (d e : ℕ),\n      program.outputStack = 1216 ∧\n      0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧\n      ∀ (n : ℕ) (F : SAT.CNF (Fin n)), 20 ≤ n → SAT.WidthAtMost k F →\n        ∃ (time : ℕ) (final : LocatedCfg (GuardedCompiler.primitive program)),\n          Computation.Trace (locatedStep (GuardedCompiler.primitive program)) time\n            (locatedInit (GuardedCompiler.primitive program) (Encoding.encodeCNF F)) final ∧\n          final.config.tapes (256 : Fin 1220) =\n            Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧\n          final.config.tapes (1216 : Fin 1220) =\n            Turing.Tape.mk₁ [some (decide (0 < SAT.count F))] ∧\n          final.config.state = Sum.inl (decide (0 < SAT.count F)) ∧\n          BinaryArithmetic.toNat (countWord (SAT.count F)) = SAT.count F ∧\n          (countWord (SAT.count F)).length ≤ n + 1 ∧\n          (time : ℝ) ≤ C * ((n + F.card + 1 : ℕ) : ℝ) ^ d *\n            (2 : ℝ) ^ (A * rho n) ∧\n          ∀ (prefixSteps : ℕ)\n            (intermediate : LocatedCfg (GuardedCompiler.primitive program)), prefixSteps ≤ time →\n            Computation.Trace (locatedStep (GuardedCompiler.primitive program)) prefixSteps\n              (locatedInit (GuardedCompiler.primitive program) (Encoding.encodeCNF F))\n              intermediate →\n            (visitedSpace intermediate : ℝ) ≤\n              S * ((n + F.card + 1 : ℕ) : ℝ) ^ e",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Turing.Tape.mk₁",
+   "decide",
+   "Sum.inl"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.SAT.WidthAtMost",
+   "OpenAI.SqrtLogSpace.LocatedCfg",
+   "OpenAI.Computation.Trace",
+   "OpenAI.SqrtLogSpace.locatedStep",
+   "OpenAI.SqrtLogSpace.locatedInit",
+   "OpenAI.Encoding.encodeCNF",
+   "OpenAI.SqrtLogSpace.countWord",
+   "OpenAI.SAT.count",
+   "OpenAI.BinaryArithmetic.toNat",
+   "OpenAI.SqrtLogSpace.visitedSpace"
+  ],
+  "proofDeps": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.Encoding.formulaBitLength"
+  ],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.headDisplacement",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.headDisplacement",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 161,
+  "endLine": 164,
+  "statement": "def headDisplacement : Turing.TM0.Stmt (Option Bool) → ℤ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Turing.TM0.Stmt",
+   "Option",
+   "Bool"
+  ],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.LocatedCfg.monitor"
+  ],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.locatedInit",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.locatedInit",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 155,
+  "endLine": 159,
+  "statement": "def locatedInit (machine : PrimitiveMachine) (input : List Bool) : LocatedCfg machine where\n  config",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "List",
+   "Bool",
+   "Int.ofNat"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine",
+   "OpenAI.SqrtLogSpace.LocatedCfg"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.locatedStep",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.locatedStep",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 184,
+  "endLine": 186,
+  "statement": "def locatedStep (machine : PrimitiveMachine) (c : LocatedCfg machine) :\n    Option (LocatedCfg machine)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Option"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine",
+   "OpenAI.SqrtLogSpace.LocatedCfg"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.original_sat_main",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.original_sat_main",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean",
+  "module": "Final",
+  "line": 184,
+  "endLine": 193,
+  "statement": "theorem original_sat_main : OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.MainTheorem",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [],
+  "proofDeps": [
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.sat_polynomial_space",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.sat_polynomial_space",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean",
+  "module": "Final",
+  "line": 149,
+  "endLine": 182,
+  "statement": "theorem sat_polynomial_space (k : ℕ) (hk : 3 ≤ k) :\n    ∃ (labels : ℕ) (program : BitProgram.Program 80 1220 labels)\n      (C A S : ℝ) (d e : ℕ),\n      program.outputStack = 1216 ∧\n      0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧\n      ∀ (n : ℕ) (F : SAT.CNF (Fin n)), SAT.WidthAtMost k F →\n        ∃ (answer : Bool) (time : ℕ)\n          (final : LocatedCfg (GuardedCompiler.primitive program)),\n          Computation.Trace (locatedStep (GuardedCompiler.primitive program)) time\n            (locatedInit (GuardedCompiler.primitive program) (Encoding.encodeCNF F)) final ∧\n          final.config.tapes (256 : Fin 1220) =\n            Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧\n          final.config.tapes (1216 : Fin 1220) = Turing.Tape.mk₁ [some answer] ∧\n          final.config.state = Sum.inl answer ∧\n          answer = decide (0 < SAT.count F) ∧\n          (answer = true ↔ SAT.Satisfiable F) ∧\n          (time : ℝ) ≤ OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound C A d\n            (Encoding.formulaBitLength F) n ∧\n          ∀ (prefixSteps : ℕ)\n            (intermediate : LocatedCfg (GuardedCompiler.primitive program)), prefixSteps ≤ time →\n            Computation.Trace (locatedStep (GuardedCompiler.primitive program)) prefixSteps\n              (locatedInit (GuardedCompiler.primitive program) (Encoding.encodeCNF F))\n              intermediate →\n            (visitedSpace intermediate : ℝ) ≤\n              S * ((Encoding.formulaBitLength F : ℝ) + 1) ^ e",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Fin",
+   "Bool",
+   "Turing.Tape.mk₁",
+   "Sum.inl",
+   "decide"
+  ],
+  "meaningDeps": [
+   "OpenAI.SAT.CNF",
+   "OpenAI.SAT.WidthAtMost",
+   "OpenAI.SqrtLogSpace.LocatedCfg",
+   "OpenAI.Computation.Trace",
+   "OpenAI.SqrtLogSpace.locatedStep",
+   "OpenAI.SqrtLogSpace.locatedInit",
+   "OpenAI.Encoding.encodeCNF",
+   "OpenAI.SqrtLogSpace.countWord",
+   "OpenAI.SAT.count",
+   "OpenAI.SqrtLog.Statement.runtimeBound",
+   "OpenAI.Encoding.formulaBitLength",
+   "OpenAI.SqrtLogSpace.visitedSpace"
+  ],
+  "proofDeps": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat"
+  ],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.original_sat_main"
+  ],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SqrtLogSpace.visitedSpace",
+  "name": "OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.visitedSpace",
+  "kind": "def",
+  "file": "vendor/openai-sat/ComparatorChallenges/SubexponentialSAT.lean",
+  "module": "SubexponentialSAT",
+  "line": 188,
+  "endLine": 189,
+  "statement": "def visitedSpace {machine : PrimitiveMachine} (c : LocatedCfg machine) : ℕ",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine",
+   "OpenAI.SqrtLogSpace.LocatedCfg"
+  ],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SqrtLogSpace.compiled_exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_and_sat",
+   "OpenAI.SqrtLogSpace.exact_count_eth",
+   "OpenAI.SqrtLogSpace.sat_polynomial_space"
+  ],
+  "depth": 1,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SubexpOrderedRawMainTheorem.MainTheorem",
+  "name": "OAI.Algorithms.SubexponentialSAT.SubexpOrderedRawMainTheorem.MainTheorem",
+  "kind": "def",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SubexpOrderedRawMainTheorem.lean",
+  "module": "SubexpOrderedRawMainTheorem",
+  "line": 105,
+  "endLine": 105,
+  "statement": "def MainTheorem : Prop",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem"
+  ],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SubexpOrderedRawMainTheorem.feasible",
+  "name": "OAI.Algorithms.SubexponentialSAT.SubexpOrderedRawMainTheorem.feasible",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SubexpOrderedRawMainTheorem.lean",
+  "module": "SubexpOrderedRawMainTheorem",
+  "line": 19,
+  "endLine": 102,
+  "statement": "theorem feasible (cfg : Config) (hsize : 672 ≤ helperSize cfg) : SubexpRawIDRuntime.Feasible cfg.k",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [],
+  "proofDeps": [],
+  "usedBy": [
+   "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem"
+  ],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem",
+  "name": "OAI.Algorithms.SubexponentialSAT.SubexpOrderedRawMainTheorem.mainTheorem",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SubexpOrderedRawMainTheorem.lean",
+  "module": "SubexpOrderedRawMainTheorem",
+  "line": 107,
+  "endLine": 111,
+  "statement": "theorem mainTheorem : MainTheorem",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [],
+  "meaningDeps": [
+   "OpenAI.SubexpOrderedRawMainTheorem.MainTheorem"
+  ],
+  "proofDeps": [
+   "OpenAI.SubexpOrderedRawMainTheorem.feasible"
+  ],
+  "usedBy": [
+   "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem_explicit"
+  ],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ },
+ {
+  "id": "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem_explicit",
+  "name": "OAI.Algorithms.SubexponentialSAT.SubexpOrderedRawMainTheorem.mainTheorem_explicit",
+  "kind": "theorem",
+  "file": "vendor/openai-sat/OAI/Algorithms/SubexponentialSAT/SubexpOrderedRawMainTheorem.lean",
+  "module": "SubexpOrderedRawMainTheorem",
+  "line": 115,
+  "endLine": 124,
+  "statement": "theorem mainTheorem_explicit :\n    ∀ k : ℕ, 3 ≤ k →\n      ∃ (machine : Computation.PrimitiveMachine) (C A : ℝ) (d : ℕ),\n        0 < C ∧ 0 < A ∧ 0 < d ∧\n        ∀ F : Subexp.RawIdEncoding.Formula, (∀ clause ∈ F, clause.length ≤ k) →\n          ∃ (answer : Bool) (time : ℕ),\n            machine.OutputsInTime (Subexp.RawIdEncoding.encode F) answer time ∧\n            (answer = true ↔ SAT.Satisfiable (Subexp.RawIdEncoding.semantics F)) ∧\n            (time : ℝ) ≤ runtimeBound C A d (Subexp.RawIdEncoding.encode F).length\n              (Subexp.RawIdEncoding.dimension F)",
+  "variables": [],
+  "truncated": false,
+  "mathlib": [
+   "Bool"
+  ],
+  "meaningDeps": [
+   "OpenAI.Computation.PrimitiveMachine",
+   "OpenAI.SqrtLog.Statement.runtimeBound"
+  ],
+  "proofDeps": [
+   "OpenAI.SubexpOrderedRawMainTheorem.mainTheorem"
+  ],
+  "usedBy": [],
+  "depth": null,
+  "project": "openai",
+  "extracted": false
+ }
+]
